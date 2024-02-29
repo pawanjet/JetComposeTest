@@ -43,9 +43,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetComposeTestTheme {
                 // A surface container using the 'background' color from the theme
+
                 //portfolioSurface()
 
-                DollarCounter()
+                //DollarCounter()
+
+                TipCalculator()
             }
         }
     }
@@ -128,7 +131,9 @@ fun portfolioSurface(){
 @Composable
 fun ProjectItem(project: Project){
 
-    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth().padding(horizontal = 15.dp)) {
+    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier
+        .fillMaxWidth()
+        .padding(horizontal = 15.dp)) {
 
         Image(painter = painterResource(id = R.drawable.user_profile), contentDescription = "project icon",
             modifier = Modifier
