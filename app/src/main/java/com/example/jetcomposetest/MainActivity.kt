@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -35,8 +36,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
+import com.example.jetcomposetest.navigation.MovieNavigation
 import com.example.jetcomposetest.ui.theme.JetComposeTestTheme
+import com.example.jetcomposetest.ui_layer.MovieListScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +54,14 @@ class MainActivity : ComponentActivity() {
 
                 //DollarCounter()
 
-                TipCalculator()
+                //TipCalculator()
+
+                Surface (modifier = Modifier.fillMaxSize(), color = Color.White){
+
+                    val navHostController = rememberNavController()
+
+                    MovieNavigation(navHostController = navHostController)
+                }
             }
         }
     }

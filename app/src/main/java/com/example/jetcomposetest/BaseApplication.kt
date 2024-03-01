@@ -2,11 +2,14 @@ package com.example.jetcomposetest
 
 import android.app.Application
 import android.util.Log
+import dagger.hilt.android.HiltAndroidApp
 
-class BaseApplication: Application {
+
+@HiltAndroidApp
+class BaseApplication: Application() {
 
     companion object{
-        TAG = "BaseApplication"
+        const val TAG = "BaseApplication"
     }
 
     override fun onCreate() {
