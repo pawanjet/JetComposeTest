@@ -43,6 +43,7 @@ class MovieDetailsViewModel @Inject constructor(private val movieRepository: Mov
                 movieDetails.value = MovieDetailsStateHolder(movieDetails = movieDetailsResult.data)
             }
             is Resource.Error ->{
+
                 movieDetails.value = MovieDetailsStateHolder(error = movieDetailsResult.message.toString())
             }
             else->{
